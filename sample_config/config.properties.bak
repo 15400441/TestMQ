@@ -1,0 +1,99 @@
+
+Databases=FIX2BSS
+
+FIX2BSS_IP=[FIX2BSS_IP]
+FIX2BSS_Port=5432
+FIX2BSS_SID=[FIX2BSS_SID]
+FIX2BSS_User=fix_user
+FIX2BSS_Password=fix_user
+FIX2BSS_InitConnection=05
+FIX2BSS_ConnIncrement=05
+FIX2BSS_MaxConnection=30
+FIX2BSS_DBType=POSTGRESDS
+FIX2BSS_Share=false
+
+
+FixINID=[FixINID]
+
+#SELL SIDES
+
+fix.SellSides=[OsNames]
+[OSConnectionContents]
+
+
+#BUY SIDES
+# LogFactoryType : File MySQL PostgreSql Jdbc
+fix.BuySides=[fix.BuySides]
+
+[fix.BuySides].ConfigFile=quickfix.properties
+[fix.BuySides].ConnectionType=acceptor
+[fix.BuySides].LogFactoryType=Jdbc
+[fix.BuySides].SenderCompID=[SenderCompID]
+[fix.BuySides].TargetCompID=[TargetCompID]
+
+# Database Health Check
+# HEALTH_CHECK_AGENT_NAME must be the same as System.Name
+HealthCheck.AgentName=Go.FIXIN-[FixINID]
+
+HealthCheck.BuilderName=FIX
+HealthCheck.Port=[HealthCheck.Port]
+HealthCheck.Interval=5
+HealthCheck.StartHealthCheck=true
+
+HealthCheck.CheckSellSide=true
+HealthCheck.CheckBuySide=true
+HealthCheck.CheckJVM=false
+HealthCheck.CheckMEM=false
+HealthCheck.CheckOS=false
+
+
+HealthCheck.BuySides=
+
+HealthCheck.BuySide.[SenderCompID].[TargetCompID].Check=true
+HealthCheck.BuySide.[SenderCompID].[TargetCompID].StartTime=0700
+HealthCheck.BuySide.[SenderCompID].[TargetCompID].EndTime=1900
+
+
+HealthCheck.SellSides=
+[SellSidesHealthCheckContent]
+
+
+
+
+# for lagacy code
+HEALTH_CHECK_CHECK_DB=true
+HEALTH_CHECK_AGENT_NAME=Go.FIXIN-[FixINID]
+HEALTH_CHECK_START=true
+
+#-- dayend must turn off (use SQL scripts for dayend)
+DayEnd.Enable=false
+DayEnd.Interval=10
+DayEnd.DoTime=2100
+SyncSeq.Enable=false
+SyncSeq.Interval=5
+Done4Day.Enable=true
+Done4Day.Interval=1
+
+# Go.FIXIN
+System.Name=Go.FIXIN-[FixINID]
+
+BusinessRejectReason_1=FIX Session not logged on
+BusinessRejectReason_2=DeliverTo firm not available at this time
+BusinessRejectReason_3=Message did not reach its intended destination
+
+JMX.RMIRegistryPort=[JMX.RMIRegistryPort]
+JMX.RMIServerPort=[JMX.RMIServerPort]
+JMX.Authenticate=false
+
+
+Clock.isDebugging=Y
+Clock.updateInterval=3000
+
+
+#MQ config
+MQ.enable=N
+MQ.host=192.168.1.48
+MQ.port=5672
+MQ.username=2gotrade
+MQ.password=2gotrade
+MQ.virtualHost=FIX

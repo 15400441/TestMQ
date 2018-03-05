@@ -1,0 +1,38 @@
+{
+    "fix2bss_ip":"127.0.0.1",
+	"fix2bss_sid":"fix2bss_gu_u",
+	
+	"connectionType":"initiator",
+	
+	"fixinID":"BLPOMS_U",
+	"buySides":"BLP",
+	
+	"sender":"GSENEQTU",
+	"target":"BLPEQTU",
+	
+	"hcPort":"16921",
+	"jmxRegistryPort":"30921",
+	"jxmServerPort":"31921",
+	
+	"list":[ {"name":"JS1690-OS-ALL",  "ip":"10.1.1.51",   "port":"11969"}
+	          
+	 
+	         ],
+	         
+	         
+	         
+	"gofixinDBName":"gofixin_gu_u", 
+	"rootFolderName":"/usr/local/gofixin/gu_uat/blp_oms",        
+	         
+	         
+	         
+	         
+	"socketAcceptPort":"1600",
+	
+	
+	
+	
+	"socketConnectHost":"69.191.198.34",
+	"socketConnectPort":"8228",
+	"socketKeyStorePassword":"QAvBwLrfKq0HYvPnN/RogQ"
+}

@@ -1,0 +1,3 @@
+2017-07-31 at 14:15:59 CST INFO  fanout.EmitLog 28 main -  [x] Sent 'info: Hello World!'
+2017-07-31 at 14:15:59 CST DEBUG fanout.EmitLog 29 main -  [x] Sent 'info: Hello World!'
+2017-07-31 at 14:15:59 CST ERROR fanout.EmitLog 30 main -  [x] Sent 'info: Hello World!'
